@@ -1,3 +1,5 @@
+# require './app.rb'
+
 class Bookmark
   def self.all
         [ "http://www.adobe.com",
