@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'sinatra/base'
 require 'sinatra/reloader'
 require './lib/bookmark'
@@ -11,22 +13,22 @@ class BookmarkManager < Sinatra::Base
     'Bookmark Manager'
   end
 
-#   get '/bookmark' do
-#     erb :bookmark
+  #   get '/bookmark' do
+  #     erb :bookmark
 
-get '/bookmarks' do
+  get '/bookmarks' do
     @bookmarks = Bookmark.all
-    erb :'bookmarks'
-end
+    erb :bookmarks
+  end
 
-#   get '/bookmarks' do
-#     bookmarks = [
-#               "http://www.adobe.com",
-#               "http://www.google.com"
-#              ]
-  
-#     bookmarks.join
-#     erb :bookmarks
-#   end
-  run! if app_file == $0
+  #   get '/bookmarks' do
+  #     bookmarks = [
+  #               "http://www.adobe.com",
+  #               "http://www.google.com"
+  #              ]
+
+  #     bookmarks.join
+  #     erb :bookmarks
+  #   end
+  run! if app_file == $PROGRAM_NAME
 end
