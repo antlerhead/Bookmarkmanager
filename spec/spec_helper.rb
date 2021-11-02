@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 ENV['RACK_ENV'] = 'test'
 
 # SimpleCov.start
@@ -6,7 +8,6 @@ require 'capybara'
 require 'capybara/rspec'
 require 'rspec'
 require 'simplecov'
-
 
 # Tell Capybara to talk to BookmarkManager
 Capybara.app = BookmarkManager
