@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
-ENV['RACK_ENV'] = 'test'
+# ENV['RACK_ENV'] = 'test'
+ENV['ENVIRONMENT'] = 'test'
 
 # SimpleCov.start
 require './app'
