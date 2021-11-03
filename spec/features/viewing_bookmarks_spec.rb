@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+# require 'spec_helper'
 
 feature 'views bookmarks' do
   scenario 'user views list of bookmarks' do
