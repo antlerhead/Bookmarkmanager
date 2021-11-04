@@ -2,6 +2,10 @@ User story 1:
 
 When user enters website they want to see a list of bookmarks.
 
+User story 2:
+
+When user enters website they want to be able to add a new bookmark.
+
 DB instructions:
 
 1. Connect to psql

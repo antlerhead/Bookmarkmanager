@@ -14,9 +14,17 @@ feature 'views bookmarks' do
     connection = PG.connect(dbname: 'bookmark_manager_test')
 
     # Add the test data
-    connection.exec("INSERT INTO bookmarks VALUES(1, 'http://www.adobe.com');")
-    connection.exec("INSERT INTO bookmarks VALUES(2, 'http://www.google.com');")
-    connection.exec("INSERT INTO bookmarks VALUES(3, 'http://www.ask.com');")
+    # connection.exec("INSERT INTO bookmarks VALUES(1, 'http://www.adobe.com');")
+    # connection.exec("INSERT INTO bookmarks VALUES(2, 'http://www.google.com');")
+    # connection.exec("INSERT INTO bookmarks VALUES(3, 'http://www.ask.com');")
+
+
+    # refactored
+    Bookmark.create(url:'http://www.adobe.com' )
+    Bookmark.create(url:'http://www.google.com')
+    Bookmark.create(url:'http://www.ask.com')
+
+
 
     visit '/bookmarks'
     expect(page).to have_content 'http://www.adobe.com'

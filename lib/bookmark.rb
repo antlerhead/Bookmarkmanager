@@ -6,12 +6,21 @@ class Bookmark
     else
       connection = PG.connect(dbname: 'bookmark_manager')
     end
-    # connection = PG.connect(dbname: 'bookmark_manager')
+   
     result = connection.exec("SELECT * FROM bookmarks;")
     result.map { |bookmark| bookmark['url'] }
     # [
     #   # 'http://www.adobe.com',
     #   # 'http://www.google.com'
     # ]
+  end
+
+  def self.create(url:) 
+    if ENV['ENVIRONMENT'] == 'test'
+      connection = PG.connect(dbname: 'bookmark_manager_test')
+    else
+      connection = PG.connect(dbname: 'bookmark_manager')
+    end
+    connection.exec("INSERT INTO bookmarks (url) VALUES('#{url}')")
   end
 end
