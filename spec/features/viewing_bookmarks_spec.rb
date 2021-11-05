@@ -20,15 +20,15 @@ feature 'views bookmarks' do
 
 
     # refactored
-    Bookmark.create(url:'http://www.adobe.com' )
-    Bookmark.create(url:'http://www.google.com')
-    Bookmark.create(url:'http://www.ask.com')
+    Bookmark.create(url:'http://www.adobe.com', title:'adobe')
+    Bookmark.create(url:'http://www.google.com', title:'google')
+    Bookmark.create(url:'http://www.ask.com', title:'ask')
 
 
 
     visit '/bookmarks'
-    expect(page).to have_content 'http://www.adobe.com'
-    expect(page).to have_content 'http://www.google.com'
-    expect(page).to have_content 'http://www.ask.com'
+    expect(page).to have_link('adobe', href: 'http://www.adobe.com')
+    expect(page).to have_link('google', href: 'http://www.google.com')
+    expect(page).to have_link('ask', href: 'http://www.ask.com')
   end
 end
